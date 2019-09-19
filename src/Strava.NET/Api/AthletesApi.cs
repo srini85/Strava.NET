@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Strava.NET.Client;
+using Strava.NET.Model;
 
-namespace IO.Swagger.Api
+namespace Strava.NET.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

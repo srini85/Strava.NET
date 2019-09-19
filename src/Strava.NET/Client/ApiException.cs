@@ -1,6 +1,6 @@
 using System;
 
-namespace IO.Swagger.Client {
+namespace Strava.NET.Client {
   /// <summary>
   /// API Exception
   /// </summary>

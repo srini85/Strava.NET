@@ -1,11 +1,9 @@
-using System;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace Strava.NET.Model {
 
   /// <summary>
   /// A pair of latitude/longitude coordinates, represented as an array of 2 floating point numbers.
