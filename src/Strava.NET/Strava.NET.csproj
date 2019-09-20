@@ -18,7 +18,7 @@ Unlike many other auto generated Strava API wrapper libraries on Nuget, this pac
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
   </ItemGroup>
 
