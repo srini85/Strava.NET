@@ -11,6 +11,10 @@
     <Description>Auto Generated Strava .NET library from the Strava V3 API.
 Unlike many other auto generated Strava API wrapper libraries on Nuget, this package is signed</Description>
     <PackageLicenseUrl>https://github.com/srini85/Strava.NET/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageId>Strava.DotNet</PackageId>
+    <AssemblyName>Strava.NET</AssemblyName>
+    <RootNamespace>Strava.NET</RootNamespace>
+    <Product>Strava.NET</Product>
   </PropertyGroup>
 
   <ItemGroup>
