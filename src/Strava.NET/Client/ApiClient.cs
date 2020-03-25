@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Web;
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Extensions;
@@ -84,7 +85,7 @@ namespace Strava.NET.Client
 
             // add file parameter, if any
             foreach(var param in fileParams)
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
 
             if (postBody != null) // http body (model) parameter
                 request.AddParameter("application/json", postBody, ParameterType.RequestBody);
@@ -111,7 +112,7 @@ namespace Strava.NET.Client
         /// <returns>Escaped string.</returns>
         public string EscapeString(string str)
         {
-            return RestSharp.Contrib.HttpUtility.UrlEncode(str);
+            return HttpUtility.HtmlEncode(str);
         }
     
         /// <summary>
