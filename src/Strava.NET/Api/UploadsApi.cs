@@ -14,7 +14,7 @@ namespace Strava.NET.Api
         /// <summary>
         /// Upload Activity Uploads a new data file to create an activity from. Requires activity:write scope.
         /// </summary>
-        /// <param name="file">The uploaded file.</param>
+        /// <param name="_file">The uploaded file.</param>
         /// <param name="name">The desired name of the resulting activity.</param>
         /// <param name="description">The desired description of the resulting activity.</param>
         /// <param name="trainer">Whether the resulting activity should be marked as having been performed on a trainer.</param>
@@ -22,7 +22,7 @@ namespace Strava.NET.Api
         /// <param name="dataType">The format of the uploaded file.</param>
         /// <param name="externalId">The desired external identifier of the resulting activity.</param>
         /// <returns>Upload</returns>
-        Upload CreateUpload (System.IO.Stream file, string name, string description, string trainer, string commute, string dataType, string externalId);
+        Upload CreateUpload (System.IO.Stream _file, string name, string description, string trainer, string commute, string dataType, string externalId);
         /// <summary>
         /// Get Upload Returns an upload for a given identifier. Requires activity:write scope.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Strava.NET.Api
         /// <summary>
         /// Upload Activity Uploads a new data file to create an activity from. Requires activity:write scope.
         /// </summary>
-        /// <param name="file">The uploaded file.</param> 
+        /// <param name="_file">The uploaded file.</param> 
         /// <param name="name">The desired name of the resulting activity.</param> 
         /// <param name="description">The desired description of the resulting activity.</param> 
         /// <param name="trainer">Whether the resulting activity should be marked as having been performed on a trainer.</param> 
@@ -95,7 +95,7 @@ namespace Strava.NET.Api
         /// <param name="dataType">The format of the uploaded file.</param> 
         /// <param name="externalId">The desired external identifier of the resulting activity.</param> 
         /// <returns>Upload</returns>            
-        public Upload CreateUpload (System.IO.Stream file, string name, string description, string trainer, string commute, string dataType, string externalId)
+        public Upload CreateUpload (System.IO.Stream _file, string name, string description, string trainer, string commute, string dataType, string externalId)
         {
             
     
@@ -108,7 +108,7 @@ namespace Strava.NET.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                                    if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
+                                    if (_file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", _file));
 if (name != null) formParams.Add("name", ApiClient.ParameterToString(name)); // form parameter
 if (description != null) formParams.Add("description", ApiClient.ParameterToString(description)); // form parameter
 if (trainer != null) formParams.Add("trainer", ApiClient.ParameterToString(trainer)); // form parameter

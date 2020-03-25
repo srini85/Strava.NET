@@ -21,10 +21,9 @@ namespace Strava.NET.Api
         /// <param name="description">Description of the activity.</param>
         /// <param name="distance">In meters.</param>
         /// <param name="trainer">Set to 1 to mark as a trainer activity.</param>
-        /// <param name="photoIds">List of native photo ids to attach to the activity.</param>
         /// <param name="commute">Set to 1 to mark as commute.</param>
         /// <returns>DetailedActivity</returns>
-        DetailedActivity CreateActivity (string name, string type, string startDateLocal, int? elapsedTime, string description, float? distance, int? trainer, string photoIds, int? commute);
+        DetailedActivity CreateActivity (string name, string type, string startDateLocal, int? elapsedTime, string description, float? distance, int? trainer, int? commute);
         /// <summary>
         /// Get Activity Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
         /// </summary>
@@ -47,7 +46,7 @@ namespace Strava.NET.Api
         /// <param name="page">Page number.</param>
         /// <param name="perPage">Number of items per page. Defaults to 30.</param>
         /// <returns>List&lt;SummaryAthlete&gt;</returns>
-        List<SummaryAthlete> GetKudoersByActivityId (int? id, int? page, int? perPage);
+        List<SummaryAthlete> GetKudoersByActivityId (long? id, int? page, int? perPage);
         /// <summary>
         /// List Activity Laps Returns the laps of an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
         /// </summary>
@@ -141,10 +140,9 @@ namespace Strava.NET.Api
         /// <param name="description">Description of the activity.</param> 
         /// <param name="distance">In meters.</param> 
         /// <param name="trainer">Set to 1 to mark as a trainer activity.</param> 
-        /// <param name="photoIds">List of native photo ids to attach to the activity.</param> 
         /// <param name="commute">Set to 1 to mark as commute.</param> 
         /// <returns>DetailedActivity</returns>            
-        public DetailedActivity CreateActivity (string name, string type, string startDateLocal, int? elapsedTime, string description, float? distance, int? trainer, string photoIds, int? commute)
+        public DetailedActivity CreateActivity (string name, string type, string startDateLocal, int? elapsedTime, string description, float? distance, int? trainer, int? commute)
         {
             
             // verify the required parameter 'name' is set
@@ -176,7 +174,6 @@ if (elapsedTime != null) formParams.Add("elapsed_time", ApiClient.ParameterToStr
 if (description != null) formParams.Add("description", ApiClient.ParameterToString(description)); // form parameter
 if (distance != null) formParams.Add("distance", ApiClient.ParameterToString(distance)); // form parameter
 if (trainer != null) formParams.Add("trainer", ApiClient.ParameterToString(trainer)); // form parameter
-if (photoIds != null) formParams.Add("photo_ids", ApiClient.ParameterToString(photoIds)); // form parameter
 if (commute != null) formParams.Add("commute", ApiClient.ParameterToString(commute)); // form parameter
                 
             // authentication setting, if any
@@ -280,7 +277,7 @@ if (commute != null) formParams.Add("commute", ApiClient.ParameterToString(commu
         /// <param name="page">Page number.</param> 
         /// <param name="perPage">Number of items per page. Defaults to 30.</param> 
         /// <returns>List&lt;SummaryAthlete&gt;</returns>            
-        public List<SummaryAthlete> GetKudoersByActivityId (int? id, int? page, int? perPage)
+        public List<SummaryAthlete> GetKudoersByActivityId (long? id, int? page, int? perPage)
         {
             
             // verify the required parameter 'id' is set

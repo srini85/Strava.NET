@@ -22,13 +22,11 @@ namespace Strava.NET.Api
         /// <returns>Zones</returns>
         Zones GetLoggedInAthleteZones ();
         /// <summary>
-        /// Get Athlete Stats Returns the activity stats of an athlete.
+        /// Get Athlete Stats Returns the activity stats of an athlete. Only includes data from activities set to Everyone visibilty.
         /// </summary>
         /// <param name="id">The identifier of the athlete. Must match the authenticated athlete.</param>
-        /// <param name="page">Page number.</param>
-        /// <param name="perPage">Number of items per page. Defaults to 30.</param>
         /// <returns>ActivityStats</returns>
-        ActivityStats GetStats (int? id, int? page, int? perPage);
+        ActivityStats GetStats (int? id);
         /// <summary>
         /// Update Athlete Update the currently authenticated athlete. Requires profile:write scope.
         /// </summary>
@@ -155,13 +153,11 @@ namespace Strava.NET.Api
         }
     
         /// <summary>
-        /// Get Athlete Stats Returns the activity stats of an athlete.
+        /// Get Athlete Stats Returns the activity stats of an athlete. Only includes data from activities set to Everyone visibilty.
         /// </summary>
         /// <param name="id">The identifier of the athlete. Must match the authenticated athlete.</param> 
-        /// <param name="page">Page number.</param> 
-        /// <param name="perPage">Number of items per page. Defaults to 30.</param> 
         /// <returns>ActivityStats</returns>            
-        public ActivityStats GetStats (int? id, int? page, int? perPage)
+        public ActivityStats GetStats (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -178,9 +174,7 @@ namespace Strava.NET.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-             if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
- if (perPage != null) queryParams.Add("per_page", ApiClient.ParameterToString(perPage)); // query parameter
-                                        
+                                                    
             // authentication setting, if any
             String[] authSettings = new String[] { "strava_oauth" };
     

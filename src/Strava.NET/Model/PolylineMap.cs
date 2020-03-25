@@ -18,9 +18,9 @@ namespace Strava.NET.Model {
     public string Id { get; set; }
 
     /// <summary>
-    /// The polyline of the map
+    /// The polyline of the map, only returned on detailed representation of an object
     /// </summary>
-    /// <value>The polyline of the map</value>
+    /// <value>The polyline of the map, only returned on detailed representation of an object</value>
     [DataMember(Name="polyline", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "polyline")]
     public string Polyline { get; set; }

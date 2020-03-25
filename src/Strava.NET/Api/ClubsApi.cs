@@ -20,7 +20,7 @@ namespace Strava.NET.Api
         /// <returns>List&lt;SummaryActivity&gt;</returns>
         List<SummaryActivity> GetClubActivitiesById (int? id, int? page, int? perPage);
         /// <summary>
-        /// List Club Administrators. Returns a list of the administrators of a given club.
+        /// List Club Administrators Returns a list of the administrators of a given club.
         /// </summary>
         /// <param name="id">The identifier of the club.</param>
         /// <param name="page">Page number.</param>
@@ -145,7 +145,7 @@ namespace Strava.NET.Api
         }
     
         /// <summary>
-        /// List Club Administrators. Returns a list of the administrators of a given club.
+        /// List Club Administrators Returns a list of the administrators of a given club.
         /// </summary>
         /// <param name="id">The identifier of the club.</param> 
         /// <param name="page">Page number.</param> 

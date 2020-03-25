@@ -91,22 +91,6 @@ namespace Strava.NET.Model {
     public string Sex { get; set; }
 
     /// <summary>
-    /// Whether the currently logged-in athlete follows this athlete.
-    /// </summary>
-    /// <value>Whether the currently logged-in athlete follows this athlete.</value>
-    [DataMember(Name="friend", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "friend")]
-    public string Friend { get; set; }
-
-    /// <summary>
-    /// Whether this athlete follows the currently logged-in athlete.
-    /// </summary>
-    /// <value>Whether this athlete follows the currently logged-in athlete.</value>
-    [DataMember(Name="follower", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "follower")]
-    public string Follower { get; set; }
-
-    /// <summary>
     /// Deprecated.  Use summit field instead. Whether the athlete has any Summit subscription.
     /// </summary>
     /// <value>Deprecated.  Use summit field instead. Whether the athlete has any Summit subscription.</value>
@@ -156,8 +140,6 @@ namespace Strava.NET.Model {
       sb.Append("  State: ").Append(State).Append("\n");
       sb.Append("  Country: ").Append(Country).Append("\n");
       sb.Append("  Sex: ").Append(Sex).Append("\n");
-      sb.Append("  Friend: ").Append(Friend).Append("\n");
-      sb.Append("  Follower: ").Append(Follower).Append("\n");
       sb.Append("  Premium: ").Append(Premium).Append("\n");
       sb.Append("  Summit: ").Append(Summit).Append("\n");
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");

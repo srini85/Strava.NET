@@ -29,7 +29,7 @@ namespace Strava.NET.Api
         /// <param name="weightClass">Summit Feature. Filter by weight class.</param>
         /// <param name="following">Filter by friends of the authenticated athlete.</param>
         /// <param name="clubId">Filter by club.</param>
-        /// <param name="dateRange">Filter by date range.</param>
+        /// <param name="dateRange">Filter by date range, will be in the athlete&#39;s timezone</param>
         /// <param name="contextEntries"></param>
         /// <param name="page">Page number.</param>
         /// <param name="perPage">Number of items per page. Defaults to 30.</param>
@@ -162,7 +162,7 @@ namespace Strava.NET.Api
         /// <param name="weightClass">Summit Feature. Filter by weight class.</param> 
         /// <param name="following">Filter by friends of the authenticated athlete.</param> 
         /// <param name="clubId">Filter by club.</param> 
-        /// <param name="dateRange">Filter by date range.</param> 
+        /// <param name="dateRange">Filter by date range, will be in the athlete&#39;s timezone</param> 
         /// <param name="contextEntries"></param> 
         /// <param name="page">Page number.</param> 
         /// <param name="perPage">Number of items per page. Defaults to 30.</param> 

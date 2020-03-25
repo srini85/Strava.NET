@@ -81,8 +81,9 @@ namespace Strava.NET.Model {
     public bool? Starred { get; set; }
 
     /// <summary>
-    /// Gets or Sets Timestamp
+    /// An epoch timestamp of when the route was created
     /// </summary>
+    /// <value>An epoch timestamp of when the route was created</value>
     [DataMember(Name="timestamp", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "timestamp")]
     public int? Timestamp { get; set; }
@@ -111,14 +112,6 @@ namespace Strava.NET.Model {
     [JsonProperty(PropertyName = "segments")]
     public List<SummarySegment> Segments { get; set; }
 
-    /// <summary>
-    /// The directions of this route
-    /// </summary>
-    /// <value>The directions of this route</value>
-    [DataMember(Name="directions", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "directions")]
-    public List<RouteDirection> Directions { get; set; }
-
 
     /// <summary>
     /// Get the string presentation of the object
@@ -140,7 +133,6 @@ namespace Strava.NET.Model {
       sb.Append("  Type: ").Append(Type).Append("\n");
       sb.Append("  SubType: ").Append(SubType).Append("\n");
       sb.Append("  Segments: ").Append(Segments).Append("\n");
-      sb.Append("  Directions: ").Append(Directions).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
