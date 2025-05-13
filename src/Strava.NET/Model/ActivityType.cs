@@ -44,6 +44,7 @@ namespace Strava.NET.Model
 		Wheelchair,
 		Windsurf,
 		Workout,
-		Yoga
+		Yoga,
+		WaterSport
 	}
 }
